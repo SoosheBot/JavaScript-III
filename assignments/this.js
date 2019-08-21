@@ -42,16 +42,22 @@ function catNames(name) {
 // Principle 3
 
 // code example for New Binding
-let myCats = new Cat {
-    name: 'the monsters',
-    color: 'black',
-    behavior: 'naughty',
-    about: function(){
-    console.log(this.behavior);
-    }
+function Cat(personalities){
+  this.themonstercats = personalities;
 }
-    myCats.about();
+let leChat = new Cat('The 🐈 cats 🐈 are 🐈 basically 🐈 monsters 🐈');
+console.log(leChat.themonstercats)
 
 // Principle 4
 
 // code example for Explicit Binding
+function kitties() {
+    console.log(this.fed); 
+  }
+  
+  let myKitties = {
+    name:'theMonsters',
+    fed:'The Monsters are never fed. In fact they are staaa-a-a-a-a-aaaarving, as we speak.', 
+  }
+  
+  kitties.call(myKitties); 
